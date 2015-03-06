@@ -148,7 +148,7 @@ class FBackDemo:
       
         Resize(self.cflow,self.original_frame)
         
-	if(right==0)and(left==0):
+	if(right<20)and(left<20):
 	    print "No Hurddle"
         else:
 	    if(left>right):
