@@ -90,11 +90,13 @@ def hover():
     v.channel_override = { "3" : 1630 }
     v.flush()
 
-    time.sleep(12)
+    time.sleep(8)
 
     print "Hover Throttle"
     v.channel_override = { "3" : 1500}
     v.flush()
+    
+    time.sleep(1)
 
 class FBackDemo:
     def __init__(self):
@@ -151,8 +153,34 @@ class FBackDemo:
         else:
 	    if(left>right):
 	        print "left"
+
+            print "Roll channel"
+            v.channel_override = { "1" : 1400}
+            v.flush()
+
+            time.sleep(2)
+
+            print "Roll neutral"
+            v.channel_override = { "1" : 1500}
+            v.flush()
+
+            time.sleep(1)
+
 	    else:
             print "right"
+            
+            print "Roll channel"
+            v.channel_override = { "1" : 1600}
+            v.flush()
+
+            time.sleep(2)
+
+            print "Roll neutral"
+            v.channel_override = { "1" : 1500}
+            v.flush()
+
+            time.sleep(1)
+
         #PutText (self.original_frame,"time "+str(time)+"s", (10,50), self.font1, (0,0,255));
         ShowImage("Optical Flow", self.original_frame)
 
