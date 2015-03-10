@@ -28,7 +28,7 @@ def hover():
 
     time.sleep(2)
 
-    v.mode = VehicleMode("LOITER")
+    v.mode = VehicleMode("STABILIZE")
 
     time.sleep(2)
 
