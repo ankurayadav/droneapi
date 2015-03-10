@@ -28,7 +28,7 @@ def hover():
 
     time.sleep(2)
 
-    v.mode = VehicleMode("LOITER")
+    v.mode = VehicleMode("STABILIZE")
 
     time.sleep(2)
 
@@ -151,29 +151,25 @@ class FBackDemo:
         
 	if(right<20)and(left<20):
 	    print "No Hurddle"
+	    #print "Roll neutral"
+            v.channel_override = { "1" : 1500}
+            v.flush()
+            #time.sleep(1)
         else:
 	    if(left>right):
 	        print "left"
-            	print "Roll channel"
+            	#print "Roll channel"
             	v.channel_override = { "1" : 1400}
             	v.flush()
-            	time.sleep(2)
-            	print "Roll neutral"
-            	v.channel_override = { "1" : 1500}
-            	v.flush()
-            	time.sleep(1)
+            	#time.sleep(2)
 	    else:
             	print "right"
-            	print "Roll channel"
+            	#print "Roll channel"
             	v.channel_override = { "1" : 1600}
             	v.flush()
-            	time.sleep(2)
-            	print "Roll neutral"
-            	v.channel_override = { "1" : 1500}
-            	v.flush()
-            	time.sleep(1)
-
-        #PutText (self.original_frame,"tm "+str(tm)+"s", (10,50), self.font1, (0,0,255));
+            	#time.sleep(2)
+       
+	#PutText (self.original_frame,"tm "+str(tm)+"s", (10,50), self.font1, (0,0,255));
         ShowImage("Optical Flow", self.original_frame)
 
     def run(self):
